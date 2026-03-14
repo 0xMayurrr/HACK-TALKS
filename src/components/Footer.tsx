@@ -1,38 +1,37 @@
-import { Rocket, Mail, Phone, MapPin } from "lucide-react";
+import { Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer className="gradient-purple text-primary-foreground py-12">
+  <footer className="bg-foreground text-white py-14">
     <div className="container mx-auto px-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
-          <div className="flex items-center gap-2 font-heading text-xl font-bold mb-4">
-            <Rocket className="w-6 h-6" />
-            Hackathon → Startup
+          <div className="flex items-center gap-3 font-brand text-2xl mb-4">
+            <img src="/logo 2.png" alt="HACK-TALKS" className="w-16 h-16 object-contain" style={{ mixBlendMode: "screen" }} />
+            HACK-<span className="text-primary">TALKS</span>
           </div>
-          <p className="text-primary-foreground/70 text-sm">
-            Empowering the next generation of founders to turn ideas into reality.
+          <p className="text-white/50 text-sm leading-relaxed max-w-xs">
+            Empowering the next generation of founders to turn ideas into reality through talks, workshops, and community.
           </p>
         </div>
         <div>
-          <h4 className="font-heading text-lg font-bold mb-4">Quick Links</h4>
-          <div className="flex flex-col gap-2">
-            <Link to="/" className="text-primary-foreground/70 hover:text-secondary transition-colors text-sm">Home</Link>
-            <Link to="/speakers" className="text-primary-foreground/70 hover:text-secondary transition-colors text-sm">Speakers</Link>
-            <Link to="/register" className="text-primary-foreground/70 hover:text-secondary transition-colors text-sm">Register</Link>
+          <h4 className="font-heading text-sm font-bold uppercase tracking-wider mb-5 text-white/80">Quick Links</h4>
+          <div className="flex flex-col gap-3">
+            <Link to="/" className="text-white/50 hover:text-white transition-colors text-sm">Home</Link>
+            <Link to="/speakers" className="text-white/50 hover:text-white transition-colors text-sm">Speakers</Link>
+            <Link to="/register" className="text-white/50 hover:text-white transition-colors text-sm">Register</Link>
           </div>
         </div>
         <div>
-          <h4 className="font-heading text-lg font-bold mb-4">Contact</h4>
-          <div className="flex flex-col gap-2 text-sm text-primary-foreground/70">
-            <div className="flex items-center gap-2"><Mail className="w-4 h-4" /> contact@example.com</div>
-            <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> +91 XXXXX XXXXX</div>
-            <div className="flex items-center gap-2"><MapPin className="w-4 h-4" /> [Venue TBA]</div>
+          <h4 className="font-heading text-sm font-bold uppercase tracking-wider mb-5 text-white/80">Contact</h4>
+          <div className="flex flex-col gap-3 text-sm text-white/50">
+            <div className="flex items-center gap-3"><Phone className="w-4 h-4 text-secondary" /> Kethciyal: +91 97870 33352</div>
+            <div className="flex items-center gap-3"><Phone className="w-4 h-4 text-secondary" /> Tamil: +91 85265 54673</div>
           </div>
         </div>
       </div>
-      <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center text-sm text-primary-foreground/50">
-        © 2026 From Hackathon to Startup. All rights reserved.
+      <div className="border-t border-white/10 mt-10 pt-6 text-center text-sm text-white/30">
+        © 2026 HACK-TALKS. All rights reserved.
       </div>
     </div>
   </footer>

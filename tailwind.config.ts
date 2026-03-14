@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Baloo 2"', 'cursive'],
-        body: ['Poppins', 'sans-serif'],
+        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+        body: ['"Plus Jakarta Sans"', 'Poppins', 'sans-serif'],
         handwritten: ['Caveat', 'cursive'],
       },
       colors: {
