@@ -1,73 +1,176 @@
-# Welcome to your Lovable project
+# HACK-TALKS 🚀
 
-## Project info
+> **Where Hackathon Ideas Meet Real Innovation**
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+A student-focused workshop website built to help innovators turn their hackathon ideas into real startups. HACK-TALKS brings together real experiences, practical frameworks, and a community of builders.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🌐 Live Site
 
-**Use Lovable**
+Coming soon — deploying on Vercel
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📌 About
 
-**Use your preferred IDE**
+HACK-TALKS is a **free one-day workshop** happening on **February 17, 2026**, designed for student innovators who want to:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Learn from real hackathon experiences
+- Understand how ideas evolve into prototypes and startups
+- Build practical skills in ideation, pitching, and team building
+- Connect with like-minded builders and innovators
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🎤 Speakers
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+| Name | Role |
+|------|------|
+| Mayur P | Lead Speaker |
+| Mohamed Irfan | Technical Mentor |
+| Manivannan S | Innovative Guide |
+| Tamil T M | Junior Speaker |
+| Joshva I | Junior Speaker |
+| Safna M | Junior Speaker — Idea Evaluation |
+| Kethciyal S | Junior Speaker — Idea Pitcher |
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📋 Workshop Agenda
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+1. **Why Hackathons Matter** — How hackathons help students learn faster and build real projects
+2. **Our Journey & Experience** — Real stories from multiple hackathons
+3. **Founder's Mindset** — The mindset needed to keep building and improving
+4. **From Idea to Startup** — Step-by-step from problem to prototype to product
+5. **Building Your Dream Team** — How to form the right team and collaborate
+6. **The C.L.E.A.R Pitch Framework** — How to explain your idea clearly and confidently
+7. **What You Should Do Next** — Practical steps after a hackathon
+
+---
+
+## 🛠️ Tech Stack
+
+- **React 18** + **TypeScript**
+- **Vite** — build tool
+- **Tailwind CSS** — styling
+- **Framer Motion** — animations
+- **React Router DOM** — routing
+- **qrcode.react** — QR code generation for event tickets
+- **html2canvas** — ticket download as PNG
+- **Google Apps Script** — registration data saved to Google Sheets
+- **Lucide React** — icons
+- **Orbitron** + **Plus Jakarta Sans** — fonts
+
+---
+
+## ✨ Features
+
+- 🏠 **Homepage** — Event info, agenda, and why to attend
+- 🎤 **Speakers Page** — Profile cards with photos, bios, roles and LinkedIn links
+- 📝 **Registration Form** — Collects name, email, phone, roll number, year, department
+- 🎫 **Event Ticket** — Auto-generated after registration with unique Ticket ID and QR code
+- 📥 **Download Ticket** — Save ticket as high-res PNG
+- 📊 **Google Sheets Integration** — Every registration auto-saved to a Google Sheet
+- 📱 **Fully Responsive** — Works on mobile, tablet and desktop
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/idea-launchpad.git
+
+# Navigate to project
+cd idea-launchpad
+
+# Install dependencies
+npm install
+
+# Start dev server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:8080](http://localhost:8080) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 📊 Google Sheets Setup
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To enable registration data collection:
 
-## What technologies are used for this project?
+1. Create a Google Sheet named `HACK-TALKS Registrations` with these headers:
 
-This project is built with:
+   `Full Name | Email | Phone | Roll No | Year | Department | Experience | Expectations | Newsletter | Ticket ID | Registered At`
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+2. Go to `Extensions → Apps Script` and paste:
 
-## How can I deploy this project?
+```javascript
+function doPost(e) {
+  try {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    const data = JSON.parse(e.postData.contents);
+    sheet.appendRow([
+      data.fullName, data.email, data.phone, data.rollNo,
+      data.year, data.department, data.experience,
+      data.expectations, data.newsletter, data.ticketId, data.registeredAt
+    ]);
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: "success" }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: "error", message: err.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+3. Deploy as **Web App** → Execute as: Me → Who has access: Anyone
+4. Copy the Web App URL and paste it in `src/pages/Register.tsx` as `SCRIPT_URL`
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 📁 Project Structure
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```
+src/
+├── assets/          # Static assets (hero image)
+├── components/      # Reusable components
+│   ├── Navbar.tsx
+│   ├── Footer.tsx
+│   ├── Layout.tsx
+│   ├── DoodleShapes.tsx
+│   └── SectionReveal.tsx
+├── pages/           # Page components
+│   ├── Index.tsx    # Homepage
+│   ├── Speakers.tsx # Speakers page
+│   └── Register.tsx # Registration + Ticket
+├── styles/          # CSS files
+│   └── MentorCard.css
+└── index.css        # Global styles
+public/
+├── logo 2.png       # Brand logo
+├── icon.png         # Original icon
+└── [speaker photos] # Speaker profile images
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## 📞 Contact
+
+- **Kethciyal S** — +91 97870 33352
+- **Tamil T M** — +91 85265 54673
+
+---
+
+## 📄 License
+
+© 2026 HACK-TALKS. All rights reserved.
