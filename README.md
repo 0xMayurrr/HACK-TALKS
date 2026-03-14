@@ -8,7 +8,7 @@ A student-focused workshop website built to help innovators turn their hackathon
 
 ## 🌐 Live Site
 
-Coming soon — deploying on Vercel
+🔗 [https://hack-talks.vercel.app](https://hack-talks.vercel.app)
 
 ---
 
@@ -161,13 +161,6 @@ public/
 ├── icon.png         # Original icon
 └── [speaker photos] # Speaker profile images
 ```
-
----
-
-## 📞 Contact
-
-- **Kethciyal S** — +91 97870 33352
-- **Tamil T M** — +91 85265 54673
 
 ---
 
