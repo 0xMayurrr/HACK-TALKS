@@ -127,7 +127,7 @@ const Register = () => {
 
     try {
       const ticketId = generateTicketId();
-      if (SCRIPT_URL !== "YOUR_GOOGLE_APPS_SCRIPT_URL") {
+      if (SCRIPT_URL) {
         await fetch(SCRIPT_URL, {
           method: "POST",
           mode: "no-cors",
