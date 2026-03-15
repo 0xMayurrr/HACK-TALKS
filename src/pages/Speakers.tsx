@@ -40,34 +40,6 @@ const Speakers = () => (
       </div>
     </section>
 
-    {/* Guider Section */}
-    <section className="py-16 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-4 text-center">
-        <SectionReveal>
-          <p className="text-purple font-black text-xs uppercase tracking-widest mb-8">Meet Our Guider</p>
-          <div className="flex flex-col items-center">
-            <div className="mentor-card-container--large">
-              <div className="mentor-card-img-wrapper" style={{ background: "#fff" }}>
-                <img src="/Anjit Raja Sir.png" alt="Mr. Anjit Raja R" className="mentor-card-img" style={{ objectPosition: "center 10%", transform: "scale(1.15)", transformOrigin: "center 10%" }} />
-              </div>
-            </div>
-            <ul className="mentor-card-socials">
-              <li className="mentor-card-social-item">
-                <a href="https://www.linkedin.com/in/profanjitraja/" target="_blank" rel="noopener noreferrer" className="mentor-card-social-link">
-                  <Linkedin className="w-4 h-4" />
-                </a>
-              </li>
-            </ul>
-            <div className="mt-5 text-center max-w-[320px]">
-              <p className="font-heading font-extrabold text-foreground text-base">Mr. Anjit Raja R</p>
-              <p className="text-purple font-black text-xs uppercase tracking-widest mt-1 mb-2">Innovation Mentor</p>
-              <p className="text-muted-foreground text-[11px] leading-relaxed">Passionate educator and AI innovator shaping the next generation of technologists.</p>
-            </div>
-          </div>
-        </SectionReveal>
-      </div>
-    </section>
-
     {/* Grid Section */}
     <section className="py-16 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4">
@@ -96,6 +68,56 @@ const Speakers = () => (
               </div>
             </SectionReveal>
           ))}
+        </div>
+
+        {/* Guiders - Below all speakers */}
+        <p className="text-center text-purple font-black text-xs uppercase tracking-widest mb-10 mt-20">Our Guiders</p>
+        <div className="flex flex-wrap justify-center gap-14 max-w-4xl mx-auto">
+          {/* Anjit Raja Sir */}
+          <SectionReveal delay={0.1}>
+            <div className="flex flex-col items-center">
+              <div className="mentor-card-container--large">
+                <div className="mentor-card-img-wrapper" style={{ background: "#fff" }}>
+                  <img src="/Anjit Raja Sir.png" alt="Mr. Anjit Raja R" className="mentor-card-img" style={{ objectPosition: "center 10%", transform: "scale(1.15)", transformOrigin: "center 10%" }} />
+                </div>
+              </div>
+              <ul className="mentor-card-socials">
+                <li className="mentor-card-social-item">
+                  <a href="https://www.linkedin.com/in/profanjitraja/" target="_blank" rel="noopener noreferrer" className="mentor-card-social-link">
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                </li>
+              </ul>
+              <div className="mt-5 text-center max-w-[320px]">
+                <p className="font-heading font-extrabold text-foreground text-base">Mr. Anjit Raja R</p>
+                <p className="text-purple font-black text-xs uppercase tracking-widest mt-1 mb-2">Innovation Mentor</p>
+                <p className="text-muted-foreground text-[11px] leading-relaxed">Passionate educator and AI innovator shaping the next generation of technologists.</p>
+              </div>
+            </div>
+          </SectionReveal>
+
+          {/* Dr. Arun Kumar Kandasamy */}
+          <SectionReveal delay={0.2}>
+            <div className="flex flex-col items-center">
+              <div className="mentor-card-container--large">
+                <div className="mentor-card-img-wrapper" style={{ background: "#fff" }}>
+                  <img src="/Arun sir .jpeg" alt="Dr. Arun Kumar Kandasamy" className="mentor-card-img" style={{ objectPosition: "center 15%", transform: "scale(1.15)", transformOrigin: "center 15%" }} />
+                </div>
+              </div>
+              <ul className="mentor-card-socials">
+                <li className="mentor-card-social-item">
+                  <a href="https://www.linkedin.com/in/dr-arun-kumar-kandasamy-b59b3353" target="_blank" rel="noopener noreferrer" className="mentor-card-social-link">
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                </li>
+              </ul>
+              <div className="mt-5 text-center max-w-[320px]">
+                <p className="font-heading font-extrabold text-foreground text-base">Dr. Arun Kumar Kandasamy</p>
+                <p className="text-purple font-black text-xs uppercase tracking-widest mt-1 mb-2">Innovation Mentor</p>
+                <p className="text-muted-foreground text-[11px] leading-relaxed">Guiding students with expertise and passion towards innovation and academic excellence.</p>
+              </div>
+            </div>
+          </SectionReveal>
         </div>
       </div>
     </section>

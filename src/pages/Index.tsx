@@ -104,6 +104,17 @@ const Index = () => (
       </div>
     </section>
 
+    {/* Sponsored By */}
+    <div className="bg-white border-b border-border/50 py-4">
+      <div className="container mx-auto px-4 flex items-center justify-center gap-3">
+        <span className="text-muted-foreground text-sm font-medium">Sponsored by</span>
+        <a href="https://trios-innovation-startup.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <img src="/trios innovation.png" alt="Trios Innovation" className="w-8 h-8 object-contain" />
+          <span className="font-heading font-bold text-foreground text-sm">TRIOS INNOVATION</span>
+        </a>
+      </div>
+    </div>
+
     {/* Introducing HACK-TALKS */}
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 text-center max-w-3xl">
